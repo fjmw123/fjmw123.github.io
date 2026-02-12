@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 博客
+permalink: /blog/
 ---
 
 <div class="page-header">
