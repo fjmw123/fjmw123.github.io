@@ -1,0 +1,50 @@
+# 网站配置
+title: "SoSME's Lab"
+description: "轨道交通工程师 × AI探索者。在代码与铁轨之间寻找效率的最优解。"
+author: SoSME
+email: your-email@example.com
+
+# GitHub Pages 配置
+baseurl: "" # 如果使用自定义域名，留空
+url: "https://fjmw123.github.io" # 你的网站URL
+github_username: fjmw123
+
+# 构建配置
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:year/:month/:day/:title/
+
+# 插件
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# 导航菜单
+navigation:
+  - name: 首页
+    link: /
+  - name: 关于
+    link: /about/
+  - name: 项目
+    link: /projects/
+  - name: 博客
+    link: /blog/
+
+# 社交链接
+social:
+  github: fjmw123
+  # twitter: your_twitter
+  # linkedin: your_linkedin
+
+# 分页（如果需要）
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+# 排除文件
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor

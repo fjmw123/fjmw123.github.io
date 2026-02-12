@@ -1,0 +1,92 @@
+---
+layout: default
+---
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">
+      <span>🚀</span>
+      <span>OpenClaw 技能开发者</span>
+    </div>
+    <h1 class="hero-title">SoSME's Lab</h1>
+    <p class="hero-subtitle">轨道交通工程师 × AI探索者。在代码与铁轨之间寻找效率的最优解。</p>
+    <div class="hero-actions">
+      <a href="/projects/" class="btn btn-primary">查看项目</a>
+      <a href="/blog/" class="btn btn-secondary">阅读博客</a>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Projects -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">精选项目</h2>
+      <p class="section-subtitle">最近在做的东西</p>
+    </div>
+    
+    <div class="card-grid">
+      <article class="card">
+        <div class="card-icon">🧠</div>
+        <h3 class="card-title">Continuous Learning Skill</h3>
+        <p class="card-desc">为 OpenClaw 开发的自动学习技能，能够从对话、笔记、行为和网络中提取洞察，构建个人知识图谱。</p>
+        <div class="card-meta">
+          <span class="tag">OpenClaw</span>
+          <span class="tag">JavaScript</span>
+        </div>
+      </article>
+      
+      <article class="card">
+        <div class="card-icon">🚇</div>
+        <h3 class="card-title">轨道交通数字化</h3>
+        <p class="card-desc">将AI和自动化技术应用于地铁车辆维护管理，提升项目效率，降低运维成本。</p>
+        <div class="card-meta">
+          <span class="tag">AI</span>
+          <span class="tag">项目管理</span>
+        </div>
+      </article>
+      
+      <article class="card">
+        <div class="card-icon">🌐</div>
+        <h3 class="card-title">个人网站</h3>
+        <p class="card-desc">用 Jekyll + GitHub Pages 搭建的个人主页，支持深色/浅色模式切换，简约而不简单。</p>
+        <div class="card-meta">
+          <span class="tag">Jekyll</span>
+          <span class="tag">CSS</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Latest Posts -->
+<section class="section" style="background-color: var(--bg-secondary);">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">最新文章</h2>
+      <p class="section-subtitle">思考和记录</p>
+    </div>
+    
+    <div class="post-list">
+      {% for post in site.posts limit:3 %}
+        <article class="post-item">
+          <h3 class="post-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
+          <div class="post-meta">
+            <span>{{ post.date | date: "%Y年%m月%d日" }}</span>
+            <span>📖 {{ post.content | number_of_words }} 字</span>
+          </div>
+          <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
+        </article>
+      {% endfor %}
+    </div>
+    
+    {% if site.posts.size > 3 %}
+      <div class="text-center mt-4">
+        <a href="/blog/" class="btn btn-secondary">查看全部文章</a>
+      </div>
+    {% endif %}
+  </div>
+</section>
