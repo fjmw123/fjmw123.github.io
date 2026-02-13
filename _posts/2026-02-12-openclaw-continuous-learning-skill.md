@@ -36,9 +36,19 @@ tags: [OpenClaw, AI, JavaScript, 项目总结]
       <h2>🏗️ 架构设计</h2>
       
       <p>整个技能分为四个核心模块：</p>
+      
+      <figure style="text-align: center; margin: 2rem 0;">
+        <img src="/assets/images/architecture.svg" alt="Continuous Learning Skill Architecture" style="max-width: 100%; height: auto; border: 1px solid #eee; border-radius: 8px;">
+        <figcaption style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">系统架构全景图</figcaption>
+      </figure>
 
       <h3>1. 对话学习模块 (Conversation Learning)</h3>
       <p>这个模块负责分析用户与 AI 的每一次对话。它会识别重要的信息片段，比如用户的职业、兴趣爱好、决策偏好等，并将这些洞察存储到长期记忆中。</p>
+      
+      <figure style="text-align: center; margin: 2rem 0;">
+        <img src="/assets/images/conversation-flow.svg" alt="Conversation Learning Flow" style="max-width: 100%; height: auto; border: 1px solid #eee; border-radius: 8px;">
+        <figcaption style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">对话学习流程示意</figcaption>
+      </figure>
       
       <p>关键技术点：</p>
       <ul>
@@ -49,6 +59,11 @@ tags: [OpenClaw, AI, JavaScript, 项目总结]
 
       <h3>2. 笔记分析模块 (Note Analysis)</h3>
       <p>连接用户的 Obsidian 知识库，解析笔记内容，识别知识节点和关联关系。这个模块帮助 AI 理解用户的知识体系。</p>
+      
+      <figure style="text-align: center; margin: 2rem 0;">
+        <img src="/assets/images/knowledge-graph.svg" alt="Knowledge Graph Concept" style="max-width: 100%; height: auto; border: 1px solid #eee; border-radius: 8px;">
+        <figcaption style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">知识图谱构建概念图</figcaption>
+      </figure>
       
       <p>功能特性：</p>
       <ul>

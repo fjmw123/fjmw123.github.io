@@ -38,9 +38,19 @@ permalink: /en/blog/openclaw-continuous-learning-skill/
       <h2>🏗️ Architecture Design</h2>
       
       <p>The entire skill consists of four core modules:</p>
+      
+      <figure style="text-align: center; margin: 2rem 0;">
+        <img src="/assets/images/architecture.svg" alt="Continuous Learning Skill Architecture" style="max-width: 100%; height: auto; border: 1px solid #eee; border-radius: 8px;">
+        <figcaption style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">Architecture Overview</figcaption>
+      </figure>
 
       <h3>1. Conversation Learning Module</h3>
       <p>This module analyzes every conversation between the user and AI. It identifies important snippets—such as the user's profession, hobbies, and decision-making preferences—and stores these insights into long-term memory.</p>
+      
+      <figure style="text-align: center; margin: 2rem 0;">
+        <img src="/assets/images/conversation-flow.svg" alt="Conversation Learning Flow" style="max-width: 100%; height: auto; border: 1px solid #eee; border-radius: 8px;">
+        <figcaption style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">Conversation Learning Workflow</figcaption>
+      </figure>
       
       <p>Key Technologies:</p>
       <ul>
@@ -51,6 +61,11 @@ permalink: /en/blog/openclaw-continuous-learning-skill/
 
       <h3>2. Note Analysis Module</h3>
       <p>Connects to the user's Obsidian knowledge base, parses note content, and identifies knowledge nodes and relationships. This helps the AI understand the user's knowledge system.</p>
+      
+      <figure style="text-align: center; margin: 2rem 0;">
+        <img src="/assets/images/knowledge-graph.svg" alt="Knowledge Graph Concept" style="max-width: 100%; height: auto; border: 1px solid #eee; border-radius: 8px;">
+        <figcaption style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">Knowledge Graph Concept</figcaption>
+      </figure>
       
       <p>Features:</p>
       <ul>
