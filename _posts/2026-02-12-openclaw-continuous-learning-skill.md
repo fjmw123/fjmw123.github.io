@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 我如何为 OpenClaw 构建了一个自动学习技能
+cover: https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1200&q=80
 date: 2026-02-12 23:00:00 +0800
 tags: [OpenClaw, AI, JavaScript, 项目总结]
 ---
@@ -37,18 +38,18 @@ tags: [OpenClaw, AI, JavaScript, 项目总结]
       
       <p>整个技能分为四个核心模块：</p>
       
-      <figure style="text-align: center; margin: 2rem 0;">
+      <!-- <figure style="text-align: center; margin: 2rem 0;">
         <img src="/assets/images/architecture-zh.svg" alt="Continuous Learning Skill Architecture" style="max-width: 100%; height: auto; border: 1px solid #eee; border-radius: 8px;">
         <figcaption style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">系统架构全景图</figcaption>
-      </figure>
+      </figure> -->
 
       <h3>1. 对话学习模块 (Conversation Learning)</h3>
       <p>这个模块负责分析用户与 AI 的每一次对话。它会识别重要的信息片段，比如用户的职业、兴趣爱好、决策偏好等，并将这些洞察存储到长期记忆中。</p>
       
-      <figure style="text-align: center; margin: 2rem 0;">
+      <!-- <figure style="text-align: center; margin: 2rem 0;">
         <img src="/assets/images/conversation-flow-zh.svg" alt="Conversation Learning Flow" style="max-width: 100%; height: auto; border: 1px solid #eee; border-radius: 8px;">
         <figcaption style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">对话学习流程示意</figcaption>
-      </figure>
+      </figure> -->
       
       <p>关键技术点：</p>
       <ul>
@@ -60,10 +61,10 @@ tags: [OpenClaw, AI, JavaScript, 项目总结]
       <h3>2. 笔记分析模块 (Note Analysis)</h3>
       <p>连接用户的 Obsidian 知识库，解析笔记内容，识别知识节点和关联关系。这个模块帮助 AI 理解用户的知识体系。</p>
       
-      <figure style="text-align: center; margin: 2rem 0;">
+      <!-- <figure style="text-align: center; margin: 2rem 0;">
         <img src="/assets/images/knowledge-graph-zh.svg" alt="Knowledge Graph Concept" style="max-width: 100%; height: auto; border: 1px solid #eee; border-radius: 8px;">
         <figcaption style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">知识图谱构建概念图</figcaption>
-      </figure>
+      </figure> -->
       
       <p>功能特性：</p>
       <ul>
@@ -78,6 +79,22 @@ tags: [OpenClaw, AI, JavaScript, 项目总结]
 
       <h3>4. 网络聚合模块 (Web Aggregation)</h3>
       <p>自动收集和整理用户感兴趣的网络内容，支持 RSS 订阅和关键词监控。</p>
+
+      <h2>🏃‍♂️ 实战效果展示</h2>
+      
+      <p>这是技能运行时的实际效果。Deep Reflection 模块会定期进行深度反思，主动提出系统共建建议：</p>
+
+      <figure style="text-align: center; margin: 2rem 0;">
+        <img src="/assets/images/demo-deep-reflection.jpg" alt="Deep Reflection Analysis" style="max-width: 100%; height: auto; border: 1px solid #eee; border-radius: 8px;">
+        <figcaption style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">Deep Reflection 深度反思报告</figcaption>
+      </figure>
+
+      <p>同时，对话学习模块会在后台默默工作，分析每一条消息：</p>
+
+      <figure style="text-align: center; margin: 2rem 0;">
+        <img src="/assets/images/demo-chat-interface.jpg" alt="Chat Analysis" style="max-width: 100%; height: auto; border: 1px solid #eee; border-radius: 8px;">
+        <figcaption style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">对话学习模块运行日志</figcaption>
+      </figure>
 
       <h2>🛠️ 技术栈</h2>
       

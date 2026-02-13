@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.75;
+    color: #333;
+    max-width: 677px;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 16px;
+  }
+  h1 { font-size: 22px; margin-bottom: 20px; font-weight: bold; }
+  h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 30px 0 15px;
+    padding-left: 10px;
+    border-left: 4px solid #4a90e2;
+    color: #333;
+  }
+  h3 { font-size: 16px; font-weight: bold; margin: 20px 0 10px; color: #555; }
+  p { margin-bottom: 15px; text-align: justify; }
+  ul, ol { margin-bottom: 20px; padding-left: 20px; }
+  li { margin-bottom: 5px; }
+  blockquote {
+    background: #f5f7fa;
+    border-left: 4px solid #dfe2e5;
+    margin: 20px 0;
+    padding: 15px;
+    color: #666;
+    font-size: 15px;
+  }
+  code {
+    background: #f0f0f0;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: Consolas, Monaco, "Andale Mono", monospace;
+    color: #d63384;
+    font-size: 14px;
+  }
+  pre {
+    background: #282c34;
+    color: #abb2bf;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 13px;
+    margin: 20px 0;
+    line-height: 1.5;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin: 20px 0;
+    display: block;
+  }
+  figcaption {
+    text-align: center;
+    color: #888;
+    font-size: 13px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+  }
+  a { color: #4a90e2; text-decoration: none; border-bottom: 1px dashed #4a90e2; }
+  hr { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+  .footer { color: #999; font-size: 13px; text-align: center; margin-top: 50px; }
+</style>
+</head>
+<body>
+
+<h1>我如何为 OpenClaw 构建了一个自动学习技能</h1>
+
+<p>
+  今天，我的第一个开源项目 <strong>Continuous Learning Skill</strong> 正式发布了。<br>
+  这是一个为 OpenClaw 开发的智能技能，能够让 AI 助手持续学习用户的偏好、习惯和知识。
+</p>
+
+<blockquote>
+  <p>这篇文章记录了整个开发过程。如果你也在折腾 AI Agent，希望这篇分享能给你一些灵感。</p>
+</blockquote>
+
+<h2>🎯 为什么要做这个项目？</h2>
+
+<p>在使用 OpenClaw 的过程中，我发现一个有趣的问题：每次对话都是全新的开始，AI 不会"记住"我们之间之前的交流。</p>
+<p>虽然 OpenClaw 提供了记忆功能，但我想让它更智能——不仅能存储记忆，还能主动从多个维度学习和进化。</p>
+<p>于是有了这个想法：构建一个<strong>自动学习技能</strong>，让 AI 能够：</p>
+
+<ul>
+  <li>🗣️ 从对话中提取关键信息和用户偏好</li>
+  <li>📓 分析 Obsidian 笔记库，构建知识图谱</li>
+  <li>👀 观察用户行为模式，优化响应策略</li>
+  <li>🌐 自动聚合网络内容，扩展知识边界</li>
+</ul>
+
+<h2>🏗️ 架构设计</h2>
+
+<p>整个技能分为四个核心模块，它们协同工作，共同构建 AI 的"大脑"。</p>
+
+<img src="https://fjmw123.github.io/assets/images/architecture-zh.svg" alt="系统架构全景图">
+<figcaption>系统架构全景图</figcaption>
+
+<h3>1. 对话学习模块 (Conversation Learning)</h3>
+<p>这个模块负责分析用户与 AI 的每一次对话。它会识别重要的信息片段，比如用户的职业、兴趣爱好、决策偏好等，并将这些洞察存储到长期记忆中。</p>
+
+<img src="https://fjmw123.github.io/assets/images/conversation-flow-zh.svg" alt="对话学习流程示意">
+<figcaption>对话学习流程示意</figcaption>
+
+<p><strong>关键技术点：</strong></p>
+<ul>
+  <li>使用语义分析提取关键信息</li>
+  <li>置信度评分系统，确保只存储可靠的信息</li>
+  <li>自动分类：偏好、习惯、决策、知识</li>
+</ul>
+
+<h3>2. 笔记分析模块 (Note Analysis)</h3>
+<p>连接用户的 Obsidian 知识库，解析笔记内容，识别知识节点和关联关系。这个模块帮助 AI 理解用户的知识体系。</p>
+
+<img src="https://fjmw123.github.io/assets/images/knowledge-graph-zh.svg" alt="知识图谱构建概念图">
+<figcaption>知识图谱构建概念图</figcaption>
+
+<p><strong>功能特性：</strong></p>
+<ul>
+  <li>支持 Frontmatter 元数据解析</li>
+  <li>自动提取标签和链接关系</li>
+  <li>构建个人知识图谱</li>
+  <li>支持中英文混合内容</li>
+</ul>
+
+<h3>3. 行为观察模块 (Behavior Observation)</h3>
+<p>记录用户的使用模式，比如何时最活跃、偏好什么类型的回复、常用的工作流等。这些信息用于优化 AI 的响应策略。</p>
+
+<h3>4. 网络聚合模块 (Web Aggregation)</h3>
+<p>自动收集和整理用户感兴趣的网络内容，支持 RSS 订阅和关键词监控。</p>
+
+<h2>🏃‍♂️ 实战效果展示</h2>
+
+<p>这是技能运行时的实际效果。Deep Reflection 模块会定期进行深度反思，主动提出系统共建建议：</p>
+
+<img src="https://fjmw123.github.io/assets/images/demo-deep-reflection.jpg" alt="深度反思报告">
+<figcaption>Deep Reflection 深度反思报告</figcaption>
+
+<p>同时，对话学习模块会在后台默默工作，分析每一条消息：</p>
+
+<img src="https://fjmw123.github.io/assets/images/demo-chat-interface.jpg" alt="对话学习运行">
+<figcaption>对话学习模块运行日志</figcaption>
+
+<h2>🛠️ 技术栈</h2>
+
+<ul>
+  <li><strong>运行时</strong>: Node.js</li>
+  <li><strong>语言</strong>: JavaScript (ES Modules)</li>
+  <li><strong>AI 服务</strong>: Gemini API (嵌入和摘要)</li>
+  <li><strong>数据存储</strong>: 本地 JSON 文件</li>
+  <li><strong>文档</strong>: Markdown</li>
+</ul>
+
+<h2>💡 开发过程中的挑战</h2>
+
+<h3>挑战 1: 会话格式解析</h3>
+<p>OpenClaw 的会话记录是 JSON Lines 格式，包含系统事件、用户消息、工具调用等多种类型。最大的挑战是正确解析这些复杂的嵌套结构，提取有价值的对话内容。</p>
+<p>✅ <strong>解决方案</strong>: 编写了专门的解析器，能够识别不同类型的消息，过滤掉系统内部事件，只保留有意义的用户-AI 交互。</p>
+
+<h3>挑战 2: 中文内容处理</h3>
+<p>作为一个中文用户，我需要确保技能能够正确处理中文内容。包括中文分词、语义理解、以及中英文混合场景。</p>
+<p>✅ <strong>解决方案</strong>: 使用 Gemini 的嵌入模型，它对多语言支持很好，能够准确理解中文语义。</p>
+
+<h3>挑战 3: 国际化发布</h3>
+<p>为了让技能能够被全球 OpenClaw 用户使用，我需要将整个项目国际化，以英文为主语言，同时保留中文翻译。</p>
+<p>✅ <strong>解决方案</strong>:</p>
+<ul>
+  <li>重构项目结构，主文档使用英文</li>
+  <li>创建完整的 <code>docs/</code> 目录存放中文翻译</li>
+  <li>更新所有示例数据和配置文件</li>
+</ul>
+
+<h2>📊 项目数据</h2>
+
+<p>开发这个技能的过程中，我积累了一些有趣的数据：</p>
+
+<ul>
+  <li>从 <strong>267 个会话</strong>中提取了 <strong>209 条有效消息</strong></li>
+  <li>编写了超过 <strong>3000 行代码</strong></li>
+  <li>创建了 <strong>4 个核心模块</strong></li>
+  <li>撰写了 <strong>中英双语文档</strong>（总计约 50KB）</li>
+</ul>
+
+<h2>🚀 如何使用</h2>
+
+<p>如果你想使用这个技能，步骤很简单：</p>
+
+<pre><code># 1. 克隆仓库
+git clone https://github.com/fjmw123/continuous-learning-skill.git
+
+# 2. 安装依赖
+npm install
+
+# 3. 初始化配置
+node scripts/init-learning.mjs
+
+# 4. 运行学习流程
+node scripts/learning-pipeline.mjs
+</code></pre>
+
+<p>记得在 <code>.env</code> 文件中配置好你的 API 密钥哦。</p>
+
+<h2>🎯 未来规划</h2>
+
+<p>这个技能的第一个版本只是一个开始。我计划在未来添加更多功能：</p>
+
+<ul>
+  <li><strong>知识图谱可视化</strong> - 用图形方式展示知识关联</li>
+  <li><strong>智能推荐</strong> - 基于学习内容推荐相关文章和资源</li>
+  <li><strong>多用户支持</strong> - 区分不同用户的学习数据</li>
+  <li><strong>云同步</strong> - 支持将学习数据同步到云端</li>
+</ul>
+
+<hr>
+
+<h2>🙏 感谢</h2>
+
+<p>这个项目的完成离不开 OpenClaw 社区的支持。特别感谢 OpenClaw 提供的强大平台，让我能够构建这样有趣的东西。</p>
+
+<p>如果你对这个技能感兴趣，欢迎访问 GitHub 仓库，给个 ⭐ 或者提交 Issue 和 PR！</p>
+
+<blockquote style="text-align: center;">
+  <strong>GitHub: fjmw123/continuous-learning-skill</strong>
+</blockquote>
+
+<div class="footer">
+  <p>SoSME's Lab · 专注效率与自动化的技术探索</p>
+</div>
+
+</body>
+</html>
