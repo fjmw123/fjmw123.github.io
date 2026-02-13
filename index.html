@@ -1,5 +1,6 @@
 ---
 layout: default
+lang: zh
 ---
 
 <!-- Hero Section -->
@@ -69,7 +70,8 @@ layout: default
     </div>
     
     <div class="post-list">
-      {% for post in site.posts limit:3 %}
+      {% assign zh_posts = site.posts | where_exp: "item", "item.lang != 'en'" %}
+      {% for post in zh_posts limit:3 %}
         <article class="post-item">
           <h3 class="post-title">
             <a href="{{ post.url | relative_url }}">{{ post.title }}</a>

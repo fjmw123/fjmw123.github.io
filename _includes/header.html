@@ -1,16 +1,24 @@
 <header class="header">
   <div class="container header-inner">
+    {% assign nav_items = site.data.menu[page.lang] | default: site.data.menu.zh %}
     <a href="{{ '/' | relative_url }}" class="logo">
       <span class="logo-icon">🧪</span>
       <span class="logo-text">SoSME's Lab</span>
     </a>
     
     <nav class="nav">
-      {% for item in site.navigation %}
-        <a href="{{ item.link | relative_url }}" class="nav-link{% if page.url == item.link %} active{% endif %}">
-          {{ item.name }}
+      {% for item in nav_items %}
+        <a href="{{ item.url | relative_url }}" class="nav-link{% if page.url == item.url %} active{% endif %}">
+          {{ item.title }}
         </a>
       {% endfor %}
+      
+      <!-- Language Switcher -->
+      {% if page.lang == 'en' %}
+        <a href="/" class="nav-link lang-toggle">🇨🇳 中文</a>
+      {% else %}
+        <a href="/en/" class="nav-link lang-toggle">🇺🇸 EN</a>
+      {% endif %}
     </nav>
     
     <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">

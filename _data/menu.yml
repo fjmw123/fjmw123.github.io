@@ -1,0 +1,15 @@
+zh:
+  - title: 首页
+    url: /
+  - title: 博客
+    url: /blog
+  - title: 关于
+    url: /about
+
+en:
+  - title: Home
+    url: /en
+  - title: Blog
+    url: /en/blog
+  - title: About
+    url: /en/about

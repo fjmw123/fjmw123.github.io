@@ -1,0 +1,23 @@
+menu:
+  zh:
+    home: "首页"
+    blog: "博客"
+    about: "关于"
+    switch_lang: "🇺🇸 EN"
+  en:
+    home: "Home"
+    blog: "Blog"
+    about: "About"
+    switch_lang: "🇨🇳 中文"
+posts:
+  zh:
+    read_more: "阅读更多"
+    posted_on: "发布于"
+  en:
+    read_more: "Read More"
+    posted_on: "Posted on"
+footer:
+  zh:
+    copyright: "© 2026 fjmw123. 版权所有."
+  en:
+    copyright: "© 2026 fjmw123. All rights reserved."
