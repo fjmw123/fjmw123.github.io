@@ -3,6 +3,8 @@ zh:
     url: /
   - title: 博客
     url: /blog
+  - title: 项目
+    url: /projects
   - title: 关于
     url: /about
 
@@ -11,5 +13,7 @@ en:
     url: /en
   - title: Blog
     url: /en/blog
+  - title: Projects
+    url: /en/projects
   - title: About
     url: /en/about

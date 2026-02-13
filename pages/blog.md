@@ -13,9 +13,10 @@ permalink: /blog/
 
 <div class="container">
   <div class="content">
-    {% if site.posts.size > 0 %}
+    {% assign zh_posts = site.posts | where_exp: "item", "item.lang != 'en'" %}
+    {% if zh_posts.size > 0 %}
       <div class="post-list">
-        {% for post in site.posts %}
+        {% for post in zh_posts %}
           <article class="post-item">
             <h2 class="post-title">
               <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
