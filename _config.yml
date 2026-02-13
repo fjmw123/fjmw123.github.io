@@ -20,16 +20,16 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 
-# 导航菜单
-navigation:
-  - name: 首页
-    link: /
-  - name: 关于
-    link: /about/
-  - name: 项目
-    link: /projects/
-  - name: 博客
-    link: /blog/
+# 导航菜单 (已迁移至 _data/menu.yml)
+# navigation:
+#   - name: 首页
+#     link: /
+#   - name: 关于
+#     link: /about/
+#   - name: 项目
+#     link: /projects/
+#   - name: 博客
+#     link: /blog/
 
 # 社交链接
 social:
